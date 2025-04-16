@@ -1,7 +1,13 @@
+import PokedexAll from "../components/PokedexAll";
+import Titre from "../components/Titre";
+
+
 function Home () {
     return (
         <div>
-         <h1>Pokedex</h1>
+      <Titre/>
+     <PokedexAll/>
+        
         </div>
     )
 }
