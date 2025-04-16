@@ -4,7 +4,7 @@ import Titre from "../components/Titre";
 
 function Home () {
     return (
-        <div>
+        <div className="grid text-center">
       <Titre/>
      <PokedexAll/>
         

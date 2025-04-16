@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Card from "../components/Card";
 
 function PokedexAll() {
   const [data, SetData] = useState([]);
@@ -7,7 +8,8 @@ function PokedexAll() {
 
   useEffect(() => {
      axios.get(`https://tyradex.vercel.app/api/v1/pokemon/tiplouf`)
-     .then((res) => SetData(res.data || []))
+     .then((res) => SetData([res.data] || []))
+    //  quand la console affiche data "is not a fonction", c'est parce que j'essaye de mapé quelque choses qui n'es tpas un tableau 
   }, [])
 
   return (
@@ -27,6 +29,14 @@ function PokedexAll() {
         >
           Search
         </button>
+      </div>
+      
+      <div className="pokemonContainer">
+        <div className="pokemon">
+        {data.map((pokemon, index) => (
+         <Card key={index} pokemon={pokemon}/>
+        ))}
+        </div>
       </div>
     </div>
   );
