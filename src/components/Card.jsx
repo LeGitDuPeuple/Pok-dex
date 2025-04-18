@@ -1,6 +1,6 @@
 function Card({pokemon, index}) {
     return (
-<div className={pokemon} index={index} style="">
+<div className={pokemon} index={index}>
   <img src={pokemon.sprites.regular} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{pokemon.name.fr}</h5>

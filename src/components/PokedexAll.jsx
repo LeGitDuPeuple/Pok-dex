@@ -6,11 +6,22 @@ function PokedexAll() {
   const [data, SetData] = useState([]);
   const [poke, setPoke] = useState("");
 
-  useEffect(() => {
-     axios.get(`https://tyradex.vercel.app/api/v1/pokemon/tiplouf`)
-     .then((res) => SetData([res.data] || []))
-    //  quand la console affiche data "is not a fonction", c'est parce que j'essaye de mapé quelque choses qui n'es tpas un tableau 
-  }, [])
+//   useEffect(() => {
+//      axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
+//      .then((res) => SetData([res.data] || []))
+//     //  quand la console affiche data "is not a fonction", c'est parce que j'essaye de mapé quelque choses qui n'es tpas un tableau 
+//   }, [])
+
+function call() {
+    if(!poke) {
+        
+    }
+    
+    axios
+      .get(`https://tyradex.vercel.app/api/v1/pokemon/${poke.toLowerCase()}`)
+      .then((res) => SetData([res.data]))
+      .catch((err) => console.error(err));
+  }
 
   return (
     <div>
@@ -26,6 +37,7 @@ function PokedexAll() {
           className="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
+          onClick={call}
         >
           Search
         </button>
