@@ -5,6 +5,7 @@ import Card from "../components/Card";
 function PokedexAll() {
   const [data, SetData] = useState([]);
   const [poke, setPoke] = useState("");
+  const [error, setError] = useState(false)
 
 //   useEffect(() => {
 //      axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
@@ -14,7 +15,7 @@ function PokedexAll() {
 
 function call() {
     if(!poke) {
-        
+      
     }
     
     axios

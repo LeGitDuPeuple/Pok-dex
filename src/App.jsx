@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./page/Home"
+import Pokedex from "./page/pokedex"
+import Home from "./page/Home1"
 
 
 function App() {
@@ -9,6 +10,11 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
+      <Route path="/pokedex" element={<Pokedex/>} />
+      {/* Mettre une erreur 404 pour cette route */}
+      <Route path="*" element={<Home/>} /> 
+
+
     </Routes>
   </BrowserRouter>
  
